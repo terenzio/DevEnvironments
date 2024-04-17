@@ -1,0 +1,28 @@
+[filter "lfs"]
+        process = git-lfs filter-process
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+[user]
+        name = terenzio
+        email = terenzio@gmail.com
+[core]
+        autocrlf = input
+
+[alias]
+        l = log --all --graph --color --decorate --oneline
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+        ckm = checkout master
+        br = show-branch
+        s = status
+
+[color]
+        ui = true
+
+[core]
+        editor = /usr/bin/vim
+
+[credential]
+        helper = osxkeychain
